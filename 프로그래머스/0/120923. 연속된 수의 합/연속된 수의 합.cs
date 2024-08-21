@@ -27,3 +27,24 @@ public class Solution
         return num_list;
     }
 }
+
+/* 
+using System;
+
+public class Solution {
+    public int[] solution(int num, int total) {
+        int[] answer = new int[num];
+        bool isEven = num % 2 == 0;
+        int quotient = total / num;
+
+        if (!isEven) { // 홀수면 가운데 들어가는 숫자가 몫
+            for (int i = 0; i < answer.Length; i++)
+                answer[i] = quotient - (num / 2) + i;
+        } else {
+            for (int i = 0; i < answer.Length; i++)
+                answer[i] = quotient - (num / 2) + i + 1;
+        }
+        return answer;
+    }
+} 
+*/
