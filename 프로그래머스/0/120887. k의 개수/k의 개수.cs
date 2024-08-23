@@ -6,6 +6,7 @@ public class Solution
     {
         string strNum = "";
         int count = 0;
+        
         for(int num=i; num<=j; num++) {
             strNum = num.ToString();
             for(int ln=0; ln<strNum.Length; ln++) {
@@ -13,8 +14,8 @@ public class Solution
                     count++;
                 }    
             }
-            strNum = "";
         }
+        
         return count;
     }
 }
