@@ -23,7 +23,7 @@ public class Solution
                     id = true;
                     result = "wrong pw";
                 }
-                else if(!id && id_pw[1] == db[r,1]) {
+                else if(!id) {
                     pw = true;
                     result = "fail";
                 }
