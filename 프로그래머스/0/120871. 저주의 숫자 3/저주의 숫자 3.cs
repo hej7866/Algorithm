@@ -9,7 +9,7 @@ public class Solution
         
         int index = 1;
         threeX.Add(index);
-        while(index <= 300) 
+        while(threeX.Count <= 100) 
         {
             if(threeX[threeX.Count - 1]%3 != 0 && !threeX[threeX.Count - 1].ToString().Contains("3")) 
             {    
