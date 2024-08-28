@@ -64,7 +64,7 @@ public class Solution
         string Const = Constant.ToString();
         if(coefficient > 0 && Constant > 0)
         {
-            if(coefficient == 1) 
+            if(coefficient == 1)  // coefficient가 1이면 1x와 같이 출력되는것을 방지해줌
             {
                 result = "x" + " " + "+" + " " + Const;
             }
@@ -75,7 +75,7 @@ public class Solution
         }
         else if(coefficient > 0 && Constant == 0)
         {
-            if(coefficient == 1) 
+            if(coefficient == 1) // coefficient가 1이면 1x와 같이 출력되는것을 방지해줌
             {
                 result = "x";
             }
