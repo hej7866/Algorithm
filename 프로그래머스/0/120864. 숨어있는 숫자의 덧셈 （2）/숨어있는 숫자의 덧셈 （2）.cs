@@ -14,7 +14,7 @@ public class Solution
             if (Char.IsDigit(my_string[i]))
             {
                 numStr += my_string[i];
-            }
+            } // 마지막 index에 숫자가 담긴다면 문자열에 붙지만 리스트에 추가는 안되므로 생각을 잘해야함!
             else
             {
                 // 현재 문자가 숫자가 아니고, numStr에 숫자가 담겨있다면
