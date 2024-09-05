@@ -1,10 +1,10 @@
 # [level 0] 간단한 논리 연산 - 181917 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181917) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181917?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31 MB, 시간: 0.20 ms
+메모리: 4.21 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 15일 02:37:20
+2024년 09월 06일 06:47:01
 
 ### 문제 설명
 
