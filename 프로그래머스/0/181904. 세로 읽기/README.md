@@ -1,10 +1,10 @@
 # [level 0] 세로 읽기 - 181904 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181904) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181904?language=cpp) 
 
 ### 성능 요약
 
-메모리: 32.2 MB, 시간: 1.12 ms
+메모리: 4.21 MB, 시간: 0.06 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 16일 22:54:02
+2024년 09월 07일 02:51:29
 
 ### 문제 설명
 
