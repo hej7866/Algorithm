@@ -1,10 +1,10 @@
 # [level 0] 글자 이어 붙여 문자열 만들기 - 181915 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181915) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181915?language=cpp) 
 
 ### 성능 요약
 
-메모리: 32.2 MB, 시간: 0.91 ms
+메모리: 4.01 MB, 시간: 0.02 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 16일 01:54:21
+2024년 09월 06일 20:57:49
 
 ### 문제 설명
 
