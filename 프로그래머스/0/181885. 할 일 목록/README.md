@@ -1,10 +1,10 @@
 # [level 0] 할 일 목록 - 181885 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181885) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181885?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.1 MB, 시간: 0.31 ms
+메모리: 4.19 MB, 시간: 0.05 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 19일 00:15:49
+2024년 09월 07일 07:17:20
 
 ### 문제 설명
 
