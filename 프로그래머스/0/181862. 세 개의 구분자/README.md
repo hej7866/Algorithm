@@ -1,10 +1,10 @@
 # [level 0] 세 개의 구분자 - 181862 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181862) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181862?language=cpp) 
 
 ### 성능 요약
 
-메모리: 51.1 MB, 시간: 20.33 ms
+메모리: 27 MB, 시간: 53.87 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 20일 03:26:33
+2024년 09월 07일 22:34:33
 
 ### 문제 설명
 
