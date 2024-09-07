@@ -1,10 +1,10 @@
 # [level 0] 배열 비교하기 - 181856 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181856) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181856?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.4 MB, 시간: 0.32 ms
+메모리: 4.2 MB, 시간: 0.02 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 20일 22:39:17
+2024년 09월 08일 03:08:47
 
 ### 문제 설명
 
