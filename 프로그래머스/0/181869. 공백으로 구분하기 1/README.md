@@ -1,10 +1,10 @@
 # [level 0] 공백으로 구분하기 1 - 181869 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181869?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181869?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.4 MB, 시간: 1.97 ms
+메모리: 4.17 MB, 시간: 0.16 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 07일 18:25:10
+2024년 09월 07일 19:16:38
 
 ### 문제 설명
 
