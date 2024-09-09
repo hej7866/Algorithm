@@ -1,10 +1,10 @@
 # [level 0] 종이 자르기 - 120922 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120922) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120922?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.1 MB, 시간: 0.18 ms
+메모리: 4.17 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 22일 03:21:12
+2024년 09월 09일 15:28:27
 
 ### 문제 설명
 
