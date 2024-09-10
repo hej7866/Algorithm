@@ -1,10 +1,10 @@
 # [level 0] 369게임 - 120891 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120891) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120891?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.4 MB, 시간: 0.79 ms
+메모리: 3.71 MB, 시간: 0.02 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 23일 23:23:43
+2024년 09월 11일 01:54:29
 
 ### 문제 설명
 
