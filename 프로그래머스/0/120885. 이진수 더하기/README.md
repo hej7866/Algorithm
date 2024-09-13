@@ -1,10 +1,10 @@
 # [level 0] 이진수 더하기 - 120885 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120885?language=cpp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120885?language=csharp) 
 
 ### 성능 요약
 
-메모리: 4.15 MB, 시간: 0.02 ms
+메모리: 31 MB, 시간: 0.62 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 12일 02:06:15
+2024년 09월 13일 19:33:10
 
 ### 문제 설명
 
