@@ -1,10 +1,10 @@
 # [level 0] 평행 - 120875 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120875) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120875?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.6 MB, 시간: 0.62 ms
+메모리: 3.75 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 28일 00:12:33
+2024년 09월 13일 21:52:04
 
 ### 문제 설명
 
