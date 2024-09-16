@@ -1,10 +1,10 @@
 # [level 0] 공 던지기 - 120843 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120843?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120843?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.2 MB, 시간: 0.34 ms
+메모리: 3.68 MB, 시간: 0.02 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 29일 21:05:27
+2024년 09월 16일 21:22:09
 
 ### 문제 설명
 
