@@ -1,10 +1,10 @@
 # [level 0] 점의 위치 구하기 - 120841 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120841?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120841?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.4 MB, 시간: 0.27 ms
+메모리: 4.14 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 29일 21:28:42
+2024년 09월 16일 22:14:55
 
 ### 문제 설명
 
