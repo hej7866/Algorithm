@@ -1,10 +1,10 @@
 # [level 0] 가위 바위 보 - 120839 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120839?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120839?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31 MB, 시간: 0.38 ms
+메모리: 4.21 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 29일 23:19:20
+2024년 09월 17일 19:17:17
 
 ### 문제 설명
 
