@@ -1,10 +1,10 @@
 # [level 0] 모스부호 (1) - 120838 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120838?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120838?language=cpp) 
 
 ### 성능 요약
 
-메모리: 30.7 MB, 시간: 0.76 ms
+메모리: 4.21 MB, 시간: 0.02 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 30일 00:22:15
+2024년 09월 17일 19:55:38
 
 ### 문제 설명
 
