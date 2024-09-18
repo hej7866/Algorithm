@@ -7,25 +7,27 @@ public class Solution
         int boardH = board.GetLength(0); // board의 가로길이
         int boardV = board.GetLength(1); // board의 세로길이
         
-        int count = 0;
+        int count = 0; // 폭탄의 갯수를 카운트하기위한 변수
         for(int i=0; i<boardH; i++)
         {
             for(int j=0; j<boardV; j++)
             {
-                if(board[i,j] == 1) 
+                if(board[i,j] == 1)  // i,j위치에 폭탄이있다면 count를 하나 늘린다.
                 {
                     count++;
                 }
             }
         }
         
-        int[,] boomPos = new int[count,2];
+        int[,] boomPos = new int[count,2]; // 폭탄의위치를 좌표로 저장할 2차원배열 변수 boomPos선언
+        
+        // 폭탄의 위치를 좌표로 저장하는 로직
         int index = 0;
         for(int i=0; i<boardH; i++)
         {
             for(int j=0; j<boardV; j++)
             {
-                if(board[i,j] == 1) 
+                if(board[i,j] == 1)  
                 {
                     boomPos[index,0] = i;
                     boomPos[index,1] = j;
@@ -35,10 +37,12 @@ public class Solution
         }
         
         
-        int[,] boardX = new int[boardH, boardV];
-        Array.Copy(board, boardX, board.Length); // 깊은복사
+        int[,] boardX = new int[boardH, boardV]; // 폭탄위치 + 위험지역을담을 2차원배열 변수 boardX선언
+        Array.Copy(board, boardX, board.Length); // 깊은복사를 통해 일단 board를 boardX에 잠시 담는다.
         
-        int bpRow = boomPos.GetLength(0);
+        int bpRow = boomPos.GetLength(0); // boomPos의 행의길이는 폭탄의갯수와 같을것이므로 정수형변수에 잠시 담는다.
+        
+        // boardX에 위험지역을 2로 표시하는 로직
         for(int i=0; i<bpRow; i++)
         {
             int j = boomPos[i,0]; // 3
@@ -47,13 +51,16 @@ public class Solution
             {
                 for(int dk = -1; dk <= 1; dk++)
                 {
-                    if (dj == 0 && dk == 0) continue; // 중심점은 무시
+                    if (dj == 0 && dk == 0) 
+                    {
+                        continue; // 중심점은 무시
+                    }
 
                     int newJ = j + dj;
                     int newK = k + dk;
 
                     // 배열 범위 확인
-                    if (newJ >= 0 && newJ < boardH && newK >= 0 && newK < boardV)
+                    if ((newJ >= 0 && newJ < boardH) && (newK >= 0 && newK < boardV))
                     {
                         boardX[newJ, newK] = 2;
                     }
@@ -75,7 +82,8 @@ public class Solution
         return zeroCount;
     }
 } 
-        
+        // 런타임 오류??
+
         // for(int i=0; i<bpRow; i++)
         // {           
         //     int j = boomPos[i,0]; // 3
