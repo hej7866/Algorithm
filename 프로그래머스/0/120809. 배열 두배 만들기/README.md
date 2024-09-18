@@ -1,10 +1,10 @@
 # [level 0] 배열 두배 만들기 - 120809 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120809?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120809?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.2 MB, 시간: 0.16 ms
+메모리: 3.9 MB, 시간: 0.35 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 02일 00:03:39
+2024년 09월 18일 18:56:05
 
 ### 문제 설명
 
