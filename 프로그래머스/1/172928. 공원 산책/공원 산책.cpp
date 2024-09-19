@@ -42,69 +42,69 @@ vector<int> solution(vector<string> park, vector<string> routes)
         bool isPossible = true;
         if(op[i] == 'E')
         {
-            if(currH + n[i] < col)
+            if(currH + n[i] < col) // 현재 위치에서 오른쪽으로 n[i]만큼 움직였을때 공원을 이탈하는지에대한 여부
             {
                 for(int p = currH; p <= currH + n[i]; p++)
                 {
                     if(park2D[currV][p] == 'X')
                     {
-                        isPossible = false;
+                        isPossible = false; // 만약 장애물을만난다면 명령수행이 불가능하니 isPossible을 false로 설정
                     }
                 }
-                if(isPossible)
+                if(isPossible) // 명령수행이 가능하다면
                 {
-                    pos[1] = currH + n[i];
+                    pos[1] = currH + n[i]; // pos[1]을 재설정
                 }
             }
         }
-        else if(op[i] == 'W')
+        else if(op[i] == 'W') 
         {
-            if(currH - n[i] >= 0)
+            if(currH - n[i] >= 0) // 현재 위치에서 왼쪽으로 n[i]만큼 움직였을때 공원을 이탈하는지에대한 여부
             {
                 for(int p = currH; p >= currH - n[i]; p--)
                 {
                     if(park2D[currV][p] == 'X')
                     {
-                        isPossible = false;
+                        isPossible = false; // 만약 장애물을만난다면 명령수행이 불가능하니 isPossible을 false로 설정
                     }
                 }
-                if(isPossible)
+                if(isPossible) // 명령수행이 가능하다면
                 {
-                    pos[1] = currH - n[i];
+                    pos[1] = currH - n[i]; // pos[1]을 재설정
                 }
             }
         }
-        else if(op[i] == 'N')
+        else if(op[i] == 'N') 
         {
-            if(currV - n[i] >= 0)
+            if(currV - n[i] >= 0) // 현재 위치에서 윗쪽으로 n[i]만큼 움직였을때 공원을 이탈하는지에대한 여부
             {
                 for(int p = currV; p >= currV - n[i]; p--)
                 {
                     if(park2D[p][currH] == 'X')
                     {
-                        isPossible = false;
+                        isPossible = false; // 만약 장애물을만난다면 명령수행이 불가능하니 isPossible을 false로 설정
                     }
                 }
-                if(isPossible)
+                if(isPossible) // 명령수행이 가능하다면
                 {
-                    pos[0] = currV - n[i];
+                    pos[0] = currV - n[i]; // pos[0]을 재설정
                 }
             }
         }
-        else if(op[i] == 'S')
+        else if(op[i] == 'S') 
         {
-            if(currV + n[i] < row)
+            if(currV + n[i] < row) // 현재 위치에서 아랫쪽으로 n[i]만큼 움직였을때 공원을 이탈하는지에대한 여부
             {
             for(int p = currV; p <= currV + n[i]; p++)
                 {
                     if(park2D[p][currH] == 'X')
                     {
-                        isPossible = false;
+                        isPossible = false; // 만약 장애물을만난다면 명령수행이 불가능하니 isPossible을 false로 설정
                     }
                 }
-                if(isPossible)
+                if(isPossible) // 명령수행이 가능하다면
                 {
-                    pos[0] = currV + n[i];
+                    pos[0] = currV + n[i]; // pos[0]을 재설정
                 }
             }
         }
