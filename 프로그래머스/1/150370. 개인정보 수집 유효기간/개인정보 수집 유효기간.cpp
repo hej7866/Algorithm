@@ -97,19 +97,19 @@ vector<int> solution(string today, vector<string> terms, vector<string> privacie
         
         int tmp = nextPriVec[i][1] + a; // 위 과정에 모두 끝난 뒤 달 수 + 약관종류 t에 대응하는 유효기간
         
-        if(tmp > 12)
+        if(tmp > 12) // tmp가 12보다 클 경우
         {
-            nextPriVec[i][0] += tmp/12;
-            nextPriVec[i][1] = tmp%12;
-            if( nextPriVec[i][1] == 0)
+            nextPriVec[i][0] += tmp/12; // 년 수에 tmp/12만큼 더해준다.
+            nextPriVec[i][1] = tmp%12;  // 달 수를 tmp%12로 초기화 한다.
+            if( nextPriVec[i][1] == 0) // 만약 달 수가 0이라면 
             {
-                nextPriVec[i][1] = 12; 
-                nextPriVec[i][0] -= 1;
+                nextPriVec[i][1] = 12; // 달 수를 12로 초기화하고
+                nextPriVec[i][0] -= 1; // 연 수에 -1을 해준다
             }
         }
-        else if(tmp <= 12)
+        else if(tmp <= 12) // tmp가 12보다 작거나 같을경우
         {
-            nextPriVec[i][1] = tmp;
+            nextPriVec[i][1] = tmp; // 달 수를 그냥 tmp로 설정해주면 된다.
         }
         
     }
