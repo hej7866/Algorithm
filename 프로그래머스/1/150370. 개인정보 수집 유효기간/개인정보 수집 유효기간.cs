@@ -6,11 +6,11 @@ public class Solution
     public int[] solution(string today, string[] terms, string[] privacies) 
     {
         // 오늘 날짜를 배열로 바꾸는 과정 
-        string[] t_str_arr = today.Split(".");
-        int[] t_i_arr = new int[t_str_arr.Length];
-        for(int i=0; i<t_str_arr.Length; i++)
+        string[] tArr = today.Split(".");
+        int[] t_arr = new int[tArr.Length];
+        for(int i=0; i<tArr.Length; i++)
         {
-            t_i_arr[i] = Int32.Parse(t_str_arr[i]);
+            t_arr[i] = Int32.Parse(tArr[i]);
         }
         
         // terms를 Dictionary로 바꾸는 과정
@@ -36,56 +36,56 @@ public class Solution
             int a = termsDic[t]; // 약관 종류에 대응하는 유효기간
             
             string[] pvcArr = pArr[0].Split("."); // 개인정보 수집일자를 .을 기준으로 분리
-            int[] pvc_i_Arr = new int[pvcArr.Length]; 
+            int[] pvc_arr = new int[pvcArr.Length]; 
             for(int i=0; i<pvcArr.Length; i++)
             {
-                pvc_i_Arr[i] = Int32.Parse(pvcArr[i]); // 분리한 날짜를 정수형으로 바꾸는 과정
+                pvc_arr[i] = Int32.Parse(pvcArr[i]); // 분리한 날짜를 정수형으로 바꾸는 과정
             }
             
             
             // 기존 개인정보 수집 일자에 먼저 -1일을 해주는 과정 
-            pvc_i_Arr[2] -= 1;
-            if( pvc_i_Arr[2] == 0)
+            pvc_arr[2] -= 1;
+            if( pvc_arr[2] == 0)
             {
-                pvc_i_Arr[2] = 28;
-                pvc_i_Arr[1] -= 1;
+                pvc_arr[2] = 28;
+                pvc_arr[1] -= 1;
             }
-            else if(pvc_i_Arr[1] == 0)
+            else if(pvc_arr[1] == 0)
             {
-                pvc_i_Arr[1] = 12;
-                pvc_i_Arr[0] -= 1;
+                pvc_arr[1] = 12;
+                pvc_arr[0] -= 1;
             }
             
             
-            int tmp = pvc_i_Arr[1] + a;
+            int tmp = pvc_arr[1] + a;
             if(tmp > 12)
             {
-                pvc_i_Arr[0] += tmp/12;
-                pvc_i_Arr[1] = tmp%12;
-                if(pvc_i_Arr[1] == 0)
+                pvc_arr[0] += tmp/12;
+                pvc_arr[1] = tmp%12;
+                if(pvc_arr[1] == 0)
                 {
-                    pvc_i_Arr[1] = 12;
-                    pvc_i_Arr[0] -= 1;
+                    pvc_arr[1] = 12;
+                    pvc_arr[0] -= 1;
                 }
             }
             else if(tmp <= 12)
             {
-                pvc_i_Arr[1] = tmp;
+                pvc_arr[1] = tmp;
             }
             
-            if(pvc_i_Arr[0] < t_i_arr[0])
+            if(pvc_arr[0] < t_arr[0])
             {
                 result.Add(num);
                 num++;
                 continue;
             }
-            else if(pvc_i_Arr[0] == t_i_arr[0] && pvc_i_Arr[1] < t_i_arr[1])
+            else if(pvc_arr[0] == t_arr[0] && pvc_arr[1] < t_arr[1])
             {
                 result.Add(num);
                 num++;
                 continue;
             }
-            else if(pvc_i_Arr[0] == t_i_arr[0] && pvc_i_Arr[1] == t_i_arr[1] &&  pvc_i_Arr[2] < t_i_arr[2])
+            else if(pvc_arr[0] == t_arr[0] && pvc_arr[1] == t_arr[1] &&  pvc_arr[2] < t_arr[2])
             {
                 result.Add(num);
                 num++;
@@ -95,7 +95,7 @@ public class Solution
             {
                 num++;
             }
-            foreach(int i in pvc_i_Arr)
+            foreach(int i in pvc_arr)
             {
                 Console.WriteLine(i);
             }
