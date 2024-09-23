@@ -6,6 +6,8 @@ using namespace std;
 int solution(int number, int limit, int power) 
 {
     int sum = 0;
+    
+    // 시간 복잡도 해결해야하는 문제.
     for(int i=1; i<=number; i++)
     {
         int count = 0;
