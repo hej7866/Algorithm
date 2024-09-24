@@ -1,10 +1,10 @@
 # [level 1] 과일 장수 - 135808 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/135808?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/135808?language=cpp) 
 
 ### 성능 요약
 
-메모리: 53.9 MB, 시간: 195.38 ms
+메모리: 34.6 MB, 시간: 86.85 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 24일 10:10:59
+2024년 09월 24일 11:05:49
 
 ### 문제 설명
 
