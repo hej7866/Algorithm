@@ -1,10 +1,10 @@
 # [level 1] 콜라 문제 - 132267 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/132267) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/132267?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.6 MB, 시간: 11.14 ms
+메모리: 4.17 MB, 시간: 0.13 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 26일 23:01:16
+2024년 09월 26일 23:03:39
 
 ### 문제 설명
 
