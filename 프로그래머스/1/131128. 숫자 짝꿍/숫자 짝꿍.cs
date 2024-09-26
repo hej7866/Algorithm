@@ -5,9 +5,10 @@ public class Solution
 {
     public string solution(string X, string Y) 
     {
-        int[] countX = new int[10];
-        int[] countY = new int[10];
+        int[] countX = new int[10]; // X에 포함된 숫자의 카운트를 담을 배열
+        int[] countY = new int[10]; // Y에 포함된 카운트를 담을 배열
         
+        // 각 숫자 카운트 세는 작업
         foreach (char c in X)
         {
             countX[c - '0']++;
@@ -24,7 +25,7 @@ public class Solution
             numArr[i] = Math.Min(countX[i], countY[i]);
         }
         
-        StringBuilder str = new StringBuilder();
+        StringBuilder str = new StringBuilder(); // 이 문제의 핵심(시간 복잡도 해결)
         for (int i = 9; i >= 0; i--)
         {
             for (int j = 0; j < numArr[i]; j++)
