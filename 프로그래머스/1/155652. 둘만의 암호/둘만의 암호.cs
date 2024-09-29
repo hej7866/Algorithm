@@ -5,18 +5,6 @@ public class Solution
 {
     public string solution(string s, string skip, int index) 
     {
-        char[] alphabet = new char[26];
-        
-        // alphabet 배열에 알파벳을 할당하는 과정
-        for(int i=97; i<=122; i++) { alphabet[i-97] = (char)i; }
-        
-         // alphabetDic 딕셔너리에 알파벳과 인덱스를 매칭하여 할당하는 과정
-        Dictionary<char, int> alphabetDic = new Dictionary<char, int>();
-        Dictionary<int, char> indexDic = new Dictionary<int, char>();
-        
-        for(int i=0; i<alphabet.Length; i++) { alphabetDic[alphabet[i]] = i; }
-        for(int i=0; i<alphabet.Length; i++) { indexDic[i] = alphabet[i]; }
-        
         string result = "";
         List<char> alphabetList = new List<char>();
         for(int i=0; i<s.Length; i++)
