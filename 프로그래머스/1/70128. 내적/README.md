@@ -1,10 +1,10 @@
 # [level 1] 내적 - 70128 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/70128?language=cpp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/70128?language=csharp) 
 
 ### 성능 요약
 
-메모리: 4.14 MB, 시간: 0.01 ms
+메모리: 31.5 MB, 시간: 0.26 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 10월 04일 00:36:36
+2024년 10월 04일 00:37:18
 
 ### 문제 설명
 
