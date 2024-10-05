@@ -46,6 +46,7 @@ int solution(vector<vector<int>> board, vector<int> moves)
         }
     }
     
+    // 디버깅
     for (int i = 0; i < len; ++i) 
     {
         cout << (i + 1) << "번 스택: ";
@@ -57,6 +58,7 @@ int solution(vector<vector<int>> board, vector<int> moves)
         cout << endl;
     }
     
+    // 디버깅
     for(int v : vec)
     {
         cout << v << " ";
