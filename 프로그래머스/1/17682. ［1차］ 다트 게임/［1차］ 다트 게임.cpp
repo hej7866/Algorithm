@@ -41,7 +41,7 @@ int solution(string dartResult)
     }    
     if(!tmp2.empty()) { svec.push_back(tmp2); }
     
-    
+    // 점수 계산 로직 (3)
     for(int i = 0; i<svec.size(); i++)
     {
         int t = ivec[i];
@@ -60,7 +60,7 @@ int solution(string dartResult)
         }
     }
     
-    // 보너스 작업 로직
+    // 보너스 작업 로직 (4,5,6,7)
     for(int i = 0; i<svec.size(); i++)
     {
         if(svec[i].size() > 1)
