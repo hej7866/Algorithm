@@ -1,10 +1,10 @@
 # [level 1] 소수 찾기 - 12921 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12921) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12921?language=csharp) 
 
 ### 성능 요약
 
-메모리: 3.76 MB, 시간: 2.77 ms
+메모리: 31.9 MB, 시간: 6.29 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 10월 15일 02:20:06
+2024년 10월 15일 02:53:51
 
 ### 문제 설명
 
