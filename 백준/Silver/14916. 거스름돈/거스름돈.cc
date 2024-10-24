@@ -33,40 +33,27 @@ using namespace std;
 /* 제한
 */
 
-vector<int> dp;
 
-int minCoin(int money)
+int Greedy_remainMoney(int n)
 {
-    if(money == 0) return 0;
-    if(money < 0) return -1;
+	int money = n;
 
-    if(dp[money] != -1)
-    {
-        return dp[money];
-    }
+	// 5원이 최대가 아닌 경우에는 무조건 false
+	// 13원 케이스 return해주기 위해서 5원 짜리를 기준으로 거슬러 줄 수 있는 케이스를 검산
+	for (int i = 0; i * 5 <= n; i++)
+	{
+		int remain = n - i * 5;
 
-    int result2 = minCoin(money-2); // 2원을 거슬러 주었을 때
-    int result5 = minCoin(money-5); // 5원을 거슬러 주었을 때
+		if (remain % 2 == 0)
+		{
+			int totalCoins = i + remain / 2;
+			money = min(money, totalCoins);
+		}
+	}
 
-    if(result2 == -1 && result5 == -1)
-    {
-        dp[money] = -1; 
-    }
-    else if(result2 == -1)
-    {
-        dp[money] = result5 + 1;
-    }
-    else if(result5 == -1)
-    {
-        dp[money] = result2 + 1;
-    }
-    else
-    {
-        dp[money] = min(result2, result5) + 1;
-    }
-
-    return dp[money];
+	return money == n ? -1 : money;
 }
+
 
 
 int main() 
@@ -77,8 +64,6 @@ int main()
     int n;
     cin >> n;
 
-    dp.assign(n+1, -1);
-
-    cout << minCoin(n) << "\n";
+    cout << Greedy_remainMoney(n) << "\n";
     return 0;
 }
