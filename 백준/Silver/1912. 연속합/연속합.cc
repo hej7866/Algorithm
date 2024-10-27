@@ -37,7 +37,9 @@ int sumDP(vector<int>& vec)
     for (int i = 1; i < vec.size(); i++) 
     {
         // 현재 요소 하나만 시작하는 경우와 이전 합에 현재 요소를 더하는 경우 중 큰 값을 선택
-        current_sum = max(vec[i], current_sum + vec[i]);
+        // current_sum이 양수라면 무조건 후자가 선택됨 음수라면 전자가 선택됨
+        // 즉, current_sum이 음수인상태면 다음 수열부터 새로운 수열이 시작됨
+        current_sum = max(vec[i], current_sum + vec[i]); 
         max_sum = max(max_sum, current_sum);
     }
 
