@@ -14,6 +14,8 @@
 
 using namespace std;
 
+// 백준문제 - 바이러스 [2606]
+
 /* 문제 [그래프 이론 / 그래프 탐색 / DFS / BFS]
 신종 바이러스인 웜 바이러스는 네트워크를 통해 전파된다. 
 한 컴퓨터가 웜 바이러스에 걸리면 그 컴퓨터와 네트워크 상에서 연결되어 있는 모든 컴퓨터는 웜 바이러스에 걸리게 된다.
@@ -35,8 +37,6 @@ using namespace std;
 */
 
 using namespace std;
-
-// 백준문제 - 바이러스 [2606]
 
 vector<vector<int>> graph(101);
 bool visited[101] = { false };
