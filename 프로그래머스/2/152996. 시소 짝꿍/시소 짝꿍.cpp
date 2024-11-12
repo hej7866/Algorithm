@@ -41,10 +41,7 @@ long long solution(vector<int> weights)
                 }
             }
         }
-
-        // 현재 몸무게를 해시맵에 추가한다.
         weightMap[weight]++;
     }
-
     return count;
 }
