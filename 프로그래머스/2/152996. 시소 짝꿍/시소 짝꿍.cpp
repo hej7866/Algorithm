@@ -34,7 +34,7 @@ long long solution(vector<int> weights)
             {
                 int adjustedWeight = (weight * numerator) / denominator;
 
-                // adjustedWeight가 이미 weightMap에 있다면, 가능한 짝꿍이 존재합니다.
+                // adjustedWeight가 이미 weightMap에 있다면, 가능한 짝꿍이 존재한다.
                 if (weightMap.count(adjustedWeight) > 0)
                 {
                     count += weightMap[adjustedWeight];
@@ -42,7 +42,7 @@ long long solution(vector<int> weights)
             }
         }
 
-        // 현재 몸무게를 해시맵에 추가합니다.
+        // 현재 몸무게를 해시맵에 추가한다.
         weightMap[weight]++;
     }
 
