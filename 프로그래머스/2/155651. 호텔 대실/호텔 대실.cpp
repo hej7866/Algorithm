@@ -21,7 +21,7 @@ int solution(vector<vector<string>> book_time)
     {
         int start = timeToMinutes(booking[0]);
         int end = timeToMinutes(booking[1]) + 10; // 종료 시간에 10분 청소 시간 추가
-        times.emplace_back(start, end);
+        times.push_back({start, end});
     }
 
     // 시작 시간 기준으로 정렬
