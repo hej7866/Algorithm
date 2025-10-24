@@ -5,15 +5,15 @@ using namespace std;
 
 vector<int> solution(vector<int> arr) 
 {
-    for(int i=0; i<arr.size(); i++)
+    for(int &n : arr)
     {
-        if(arr[i] >= 50 && arr[i]%2 == 0)
+        if(n >= 50 && n%2 == 0)
         {
-            arr[i] /= 2;
+            n /= 2;
         }
-        else if(arr[i] < 50 && arr[i]%2 == 1)
+        else if (n < 50 && n%2 == 1)
         {
-            arr[i] *= 2;
+            n *= 2;
         }
     }
     return arr;
