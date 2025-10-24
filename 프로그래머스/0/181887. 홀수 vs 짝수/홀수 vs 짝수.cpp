@@ -5,18 +5,18 @@ using namespace std;
 
 int solution(vector<int> num_list) 
 {
-    int oddSum = 0;
-    int evenSum = 0;
+    int a1 = 0;
+    int a2 = 0;
     for(int i=0; i<num_list.size(); i++)
     {
-        if(i%2 == 1)
+        if(i%2 == 0)
         {
-            oddSum += num_list[i];
+            a1 += num_list[i];
         }
         else
         {
-            evenSum += num_list[i];
+            a2 += num_list[i];
         }
     }
-    return (oddSum > evenSum) ? oddSum : evenSum;
+    return a1 > a2 ? a1 : a2;
 }
