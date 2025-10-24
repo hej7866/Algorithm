@@ -5,17 +5,15 @@ using namespace std;
 
 string solution(string myString) 
 {
-    for(char &ch : myString)
+    for(char &c : myString)
     {
-        if(ch == 'a')
+        if(c == 'a')
         {
-            char upperch = toupper(ch);
-            ch = upperch;
+            c = toupper(c);
         }
-        else if(ch != 'A' && isupper(ch))
+        else if(c != 'A')
         {
-            char lowerch = tolower(ch);
-            ch = lowerch;
+            c = tolower(c);
         }
     }
     return myString;
