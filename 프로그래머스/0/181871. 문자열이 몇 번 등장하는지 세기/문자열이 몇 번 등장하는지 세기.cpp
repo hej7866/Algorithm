@@ -5,12 +5,12 @@ using namespace std;
 
 int solution(string myString, string pat) 
 {
-    int count = 0;
     size_t pos = myString.find(pat);
+    int count = 0;
     while (pos != string::npos) 
     {
         count++;
-        pos = myString.find(pat, pos + 1); // 겹쳐서 나오는 것도 찾으려면 +1로 이동
+        pos = myString.find(pat, pos + 1); // 다음 위치부터 다시 검색
     }
     return count;
 }
