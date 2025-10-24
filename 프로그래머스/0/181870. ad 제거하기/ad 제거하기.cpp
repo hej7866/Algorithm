@@ -5,14 +5,14 @@ using namespace std;
 
 vector<string> solution(vector<string> strArr) 
 {
-    string target = "ad";
-    vector<string> ans;
-    for(string s : strArr)
+    vector<string> v;
+    for(string str : strArr)
     {
-        if(s.find(target) == string::npos)
+        if (str.find("ad") != string::npos)
         {
-            ans.push_back(s);
+            continue;
         }
+        v.push_back(str);
     }
-    return ans;
+    return v;
 }
