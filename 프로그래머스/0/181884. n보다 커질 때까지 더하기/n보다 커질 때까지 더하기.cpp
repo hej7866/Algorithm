@@ -5,14 +5,11 @@ using namespace std;
 
 int solution(vector<int> numbers, int n) 
 {
-    int answer = 0;
-    for(int i=0; i<numbers.size(); i++)
+    int ans = 0;
+    for(int i : numbers)
     {
-        answer += numbers[i];
-        if(answer > n)
-        {
-            break;
-        }
+        ans += i;
+        if(ans > n) break;
     }
-    return answer;
+    return ans;
 }
