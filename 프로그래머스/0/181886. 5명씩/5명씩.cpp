@@ -5,10 +5,13 @@ using namespace std;
 
 vector<string> solution(vector<string> names) 
 {
-    vector<string> answer;
-    for(int i=0; i<names.size(); i = i + 5)
+    vector<string> v;
+    for(int i=0; i<names.size(); i++)
     {
-        answer.push_back(names[i]);
+        if(i%5 == 0)
+        {
+            v.push_back(names[i]);
+        }
     }
-    return answer;
+    return v;
 }
