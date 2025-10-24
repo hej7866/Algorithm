@@ -1,14 +1,15 @@
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
-string solution(vector<string> arr) 
-{
-    string result = "";
-    for(string &c : arr)
-    { 
-        result += c; 
+string solution(vector<string> arr) {
+    string ans;
+    for(string s : arr)
+    {
+        ans += s;
     }
-    return result;
+    cout << ans;
+    return ans;
 }
