@@ -6,20 +6,21 @@ using namespace std;
 int solution(vector<int> num_list) 
 {
     int count = 0;
-    for(int &num : num_list)
+    for(int n : num_list)
     {
-        while(num != 1)
+        while(n != 1)
         {
-            if(num%2 == 0)
+            if(n%2 == 0)
             {
-                num /= 2;
+                n /= 2;
+                count++;
             }
             else
             {
-                num -= 1;
-                num /= 2;
-            }
-            count++;
+                n -= 1;
+                n /= 2;
+                count++;
+            }     
         }
     }
     return count;

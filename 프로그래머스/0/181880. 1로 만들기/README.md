@@ -1,10 +1,10 @@
 # [level 0] 1로 만들기 - 181880 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181880?language=cpp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181880) 
 
 ### 성능 요약
 
-메모리: 4.13 MB, 시간: 0.01 ms
+메모리: 4.21 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 07일 07:46:43
+2025년 10월 24일 22:34:59
 
 ### 문제 설명
 
