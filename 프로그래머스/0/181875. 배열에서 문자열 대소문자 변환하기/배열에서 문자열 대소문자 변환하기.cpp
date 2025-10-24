@@ -8,13 +8,19 @@ vector<string> solution(vector<string> strArr)
 {
     for(int i=0; i<strArr.size(); i++)
     {
-        if(i%2 == 1)
+        if(i%2 == 0)
         {
-            transform(strArr[i].begin(), strArr[i].end(), strArr[i].begin(), ::toupper);
+            for(char &c : strArr[i])
+            {
+                c = tolower(c);
+            }
         }
         else
         {
-            transform(strArr[i].begin(), strArr[i].end(), strArr[i].begin(), ::tolower);
+            for(char &c : strArr[i])
+            {
+                c = toupper(c);
+            }
         }
     }
     return strArr;
