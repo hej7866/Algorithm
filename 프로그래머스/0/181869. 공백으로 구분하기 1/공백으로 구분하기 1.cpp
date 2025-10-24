@@ -5,21 +5,25 @@ using namespace std;
 
 vector<string> solution(string my_string) 
 {
-    vector<string> ans;
-    string tmp; 
+    vector<string> v;
+    string tmp = "";
     for(char c : my_string)
     {
-        if(c == ' ')
-        {
-            ans.push_back(tmp);
-            tmp = "";
-        }
-        else
+        if(c != ' ')
         {
             tmp += c;
         }
+        else if(c == ' ')
+        {
+            v.push_back(tmp);
+            tmp = "";
+        }
         
     }
-    ans.push_back(tmp);
-    return ans;
+    
+    if(!tmp.empty())
+    {
+        v.push_back(tmp);
+    }
+    return v;
 }
