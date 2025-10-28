@@ -1,39 +1,17 @@
 #include <string>
 #include <vector>
+#include <iostream>
+#include <algorithm>
 
 using namespace std;
 
 vector<string> solution(vector<string> str_list) 
 {
-    vector<string> answer;
-    
-    int index = 0;  
-    string temp = "";
-    for(string &s : str_list)
-    {
-        if(s == "l" || s == "r")
-        {
-            temp = s;
-            break;
-        }
-        index++;
-    }
-    
+    // "l" 또는 "r"가 처음 나타나는 위치
+    auto it = find_if(str_list.begin(), str_list.end(),
+                      [](const string& s){ return s == "l" || s == "r"; });
 
-    if(temp == "l")
-    {
-        for(int i=0; i<index; i++)
-        {
-            answer.push_back(str_list[i]);
-        }
-    }
-    else if(temp == "r")
-    {
-        for(int i=index+1; i<str_list.size(); i++)
-        {
-            answer.push_back(str_list[i]);
-        }
-    }
-
-    return answer;
+    if (it == str_list.end()) return {};            // l/r 없으면 빈 벡터
+    if (*it == "l") return {str_list.begin(), it};  // l이면 왼쪽만
+    return {next(it), str_list.end()};              // r이면 오른쪽만
 }
