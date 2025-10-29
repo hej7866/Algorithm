@@ -3,18 +3,15 @@
 
 using namespace std;
 
-vector<int> solution(vector<int> arr, vector<vector<int>> intervals)
+vector<int> solution(vector<int> arr, vector<vector<int>> intervals) 
 {
-    vector<int> answer;
-    for(int i=0; i<intervals.size(); i++)
+    vector<int> ans;
+    for(auto v : intervals)
     {
-        int s = intervals[i][0];
-        int e = intervals[i][1];
-        
-        for(int j=s; j<=e; j++)
+        for(int i=v[0]; i<=v[1]; i++)
         {
-            answer.push_back(arr[j]);
+            ans.push_back(arr[i]);
         }
     }
-    return answer;
+    return ans;
 }
