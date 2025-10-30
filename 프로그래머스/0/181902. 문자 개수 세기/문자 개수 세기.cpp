@@ -5,18 +5,19 @@ using namespace std;
 
 vector<int> solution(string my_string) 
 {
-    vector<int> alphabet(52,0);
+    vector<int> v(52,0);
     
-    for(char &ch : my_string)
+    for(char c : my_string)
     {
-        if(ch >= 65 && ch <= 90)
+        if(isupper(c))
         {
-            alphabet[ch-65]++;
+            v[c-65]++;
         }
-        else if(ch >= 97 && ch <= 122)
+        else if(islower(c))
         {
-            alphabet[ch-71]++;
+            v[c-71]++;
         }
     }
-    return alphabet;
+    
+    return v;
 }
