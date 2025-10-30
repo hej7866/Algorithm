@@ -5,13 +5,10 @@ using namespace std;
 
 string solution(int q, int r, string code) 
 {
-    string answer = "";
-    for(int i=0; i<code.length(); i++)
+    string s;
+    for(int i=0; i<code.size(); i++)
     {
-        if(i%q == r)
-        {
-            answer += code[i];
-        }
+        if(i%q == r) s.push_back(code[i]);
     }
-    return answer;
+    return s;
 }
