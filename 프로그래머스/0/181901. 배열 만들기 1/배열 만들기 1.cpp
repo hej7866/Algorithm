@@ -3,15 +3,15 @@
 
 using namespace std;
 
-vector<int> solution(int n, int k) 
+vector<int> solution(int n, int k)
 {
-    vector<int> vec;
-    for(int i=1; i<=n; i++)
+    vector<int> v;
+    for(int i = 1; i<=n; i++)
     {
         if(i%k == 0)
         {
-            vec.push_back(i);
+            v.push_back(i);
         }
     }
-    return vec;
+    return v;
 }
