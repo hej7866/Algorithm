@@ -1,10 +1,10 @@
 # [level 0] 리스트 자르기 - 181897 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181897?language=cpp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181897) 
 
 ### 성능 요약
 
-메모리: 4.16 MB, 시간: 0.01 ms
+메모리: 3.63 MB, 시간: 0.02 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 07일 04:49:57
+2025년 10월 30일 19:50:36
 
 ### 문제 설명
 

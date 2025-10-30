@@ -5,37 +5,33 @@ using namespace std;
 
 vector<int> solution(int n, vector<int> slicer, vector<int> num_list) 
 {
-    vector<int> answer;
-    
-    int a = slicer[0];
-    int b = slicer[1];
-    int c = slicer[2];
+    vector<int> v;
     switch(n)
     {
         case 1:
-            for(int i=0; i<=b; i++)
+            for(int i=0; i<=slicer[1]; i++)
             {
-                answer.push_back(num_list[i]);
+                v.push_back(num_list[i]);
             }
             break;
         case 2:
-            for(int i=a; i<num_list.size(); i++)
+            for(int i=slicer[0]; i<num_list.size(); i++)
             {
-                answer.push_back(num_list[i]);
+                v.push_back(num_list[i]);
             }
             break;
         case 3:
-            for(int i=a; i<=b; i++)
+            for(int i=slicer[0]; i<=slicer[1]; i++)
             {
-                answer.push_back(num_list[i]);
+                v.push_back(num_list[i]);
             }
             break;
         case 4:
-            for(int i=a; i<=b; i = i + c)
+            for(int i=slicer[0]; i<=slicer[1]; i += slicer[2])
             {
-                answer.push_back(num_list[i]);
+                v.push_back(num_list[i]);
             }
             break;
     }
-    return answer;
+    return v;
 }
