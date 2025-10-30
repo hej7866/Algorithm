@@ -5,10 +5,10 @@ using namespace std;
 
 vector<int> solution(int start_num, int end_num) 
 {
-    vector<int> vec;
-    for(int i=start_num; i>=end_num; i--)
+    vector<int> v;
+    for(int i = start_num; i>=end_num; i--)
     {
-        vec.push_back(i);
+        v.push_back(i);
     }
-    return vec;
+    return v;
 }
