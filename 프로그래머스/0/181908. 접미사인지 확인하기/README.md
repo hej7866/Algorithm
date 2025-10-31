@@ -1,10 +1,10 @@
 # [level 0] 접미사인지 확인하기 - 181908 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181908?language=cpp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181908) 
 
 ### 성능 요약
 
-메모리: 3.63 MB, 시간: 0.02 ms
+메모리: 4.12 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 07일 01:41:37
+2025년 10월 31일 21:53:26
 
 ### 문제 설명
 
