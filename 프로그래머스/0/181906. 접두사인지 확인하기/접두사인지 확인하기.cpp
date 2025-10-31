@@ -6,11 +6,11 @@ using namespace std;
 
 int solution(string my_string, string is_prefix) 
 {
-    vector<string> prefixVec;
-    for(int i=0; i<my_string.length(); i++)
-    {
-        int len = my_string.length() - i;
-        prefixVec.push_back(my_string.substr(0,len));
+    int pos = 0; // 체크할 시작 인덱스
+
+    if (my_string.substr(pos, is_prefix.size()) == is_prefix) {
+        return 1;
+    } else {
+        return 0;
     }
-    return (find(prefixVec.begin(), prefixVec.end(), is_prefix) != prefixVec.end()) ? 1 : 0;
 }
