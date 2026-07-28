@@ -1,17 +1,21 @@
+using System;
+
 public class Solution 
 {
     public string solution(string s) 
     {
-        string ans = "";
-        if(s.Length % 2 == 1)
+        int i = s.Length - 1;
+        
+        string result = "";
+        if(i%2 == 0)
         {
-           ans = s[(s.Length - 1) / 2].ToString();
+            result = s[i/2].ToString();
         }
         else
         {
-            ans += s[(s.Length) / 2 - 1];
-            ans += s[(s.Length) / 2];
+            result = s[i/2].ToString();
+            result += s[i/2 + 1].ToString();
         }
-        return ans;
+        return result;
     }
 }
