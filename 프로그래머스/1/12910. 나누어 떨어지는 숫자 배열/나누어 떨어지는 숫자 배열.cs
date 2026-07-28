@@ -1,23 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Solution 
 {
     public int[] solution(int[] arr, int divisor) 
     {
-        List<int> list = new List<int>();
-        foreach(int i in arr)
+        List<int> results = new List<int>();
+        foreach(var n in arr)
         {
-            if(i%divisor == 0)
+            if(n%divisor == 0)
             {
-                list.Add(i);
+                results.Add(n);
             }
         }
-        list.Sort();
-        if(list.Count == 0)
-        {
-            list.Add(-1);
-        }
-        return list.ToArray();
+        int[] ans = results.ToArray();
+        Array.Sort(ans);
+        return ans.Length == 0 ? new int[] {-1} : ans;
     }
 }
