@@ -1,14 +1,12 @@
 using System;
+using System.Linq;
 
 public class Solution 
 {
     public string solution(string s) 
     {
-        char[] charArr = s.ToCharArray();
-        Array.Sort(charArr);
-        Array.Reverse(charArr);
+        char[] ans = s.OrderByDescending(x => x).ToArray();
         
-        string ans = new string(charArr);
-        return ans;
+        return new string(ans);
     }
 }
