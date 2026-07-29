@@ -1,34 +1,24 @@
-public class Solution 
+public class Solution
 {
-    public int solution(int n) 
+    public int solution(int n)
     {
-        bool[] is_prime = new bool[n+1];
-        
-        for (int i = 0; i < is_prime.Length; i++)
-        {
-            is_prime[i] = true;
-        }
-        
-        is_prime[0] = is_prime[1] = false;
+        int count = 0;
 
-        for (int i = 2; i * i <= n; i++) 
+        for (int i = 2; i <= n; i++)
         {
-            if (is_prime[i]) 
+            bool isPrime = true;
+
+            for (int j = 2; j * j <= i; j++)
             {
-                for (int j = i * i; j <= n; j += i) 
+                if (i % j == 0)
                 {
-                    is_prime[j] = false;
+                    isPrime = false;
+                    break;
                 }
             }
-        }
 
-        int count = 0;
-        for (int i = 2; i <= n; i++) 
-        {
-            if (is_prime[i]) 
-            {
+            if (isPrime)
                 count++;
-            }
         }
 
         return count;
