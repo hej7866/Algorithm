@@ -1,17 +1,19 @@
+using System;
+
 public class Solution 
 {
     public string solution(int n) 
     {
         string ans = "";
-        for(int i=0; i<n; i++)
+        for(int i=1; i<=n; i++)
         {
             if(i%2 == 0)
             {
-                ans += "수";
+                ans += '박';
             }
             else
             {
-                ans += "박";
+                ans += '수';
             }
         }
         return ans;

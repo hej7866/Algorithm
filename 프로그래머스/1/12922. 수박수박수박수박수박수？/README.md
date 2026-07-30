@@ -1,10 +1,10 @@
 # [level 1] 수박수박수박수박수박수? - 12922 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12922?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12922) 
 
 ### 성능 요약
 
-메모리: 47.4 MB, 시간: 69.07 ms
+메모리: 142 MB, 시간: 38.84 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 10월 15일 01:47:24
+2026년 07월 30일 23:52:23
 
 ### 문제 설명
 
