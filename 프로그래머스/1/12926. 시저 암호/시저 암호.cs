@@ -1,37 +1,21 @@
+using System;
 public class Solution 
 {
     public string solution(string s, int n) 
     {
-        char[] charArr = s.ToCharArray();
-        for(int i=0; i<charArr.Length; i++)
+        char[] arr = s.ToCharArray();
+        for(int i = 0; i < arr.Length; i++)
         {
-            if(charArr[i] != ' ')
+            if(arr[i] == ' ')
             {
-                if (charArr[i] >= 97 && charArr[i] <= 122) 
-                {
-                    if (charArr[i] + n > 122) 
-                    {
-                        charArr[i] = (char)(charArr[i] + n - 26);
-                    } 
-                    else 
-                    {
-                        charArr[i] = (char)(charArr[i] + n);
-                    }
-                }
-                else if(charArr[i] >= 65 && charArr[i] <= 90)
-                {
-                    if (charArr[i] + n > 90) 
-                    {
-                        charArr[i] = (char)(charArr[i] + n - 26);
-                    } 
-                    else 
-                    {
-                        charArr[i] = (char)(charArr[i] + n);
-                    }
-                }
+                continue;
             }
+            
+            char baseChar = char.IsUpper(arr[i]) ? 'A' : 'a';
+            int offset = ((arr[i] - baseChar) + n) % 26;
+            arr[i] = (char)(baseChar + offset);
         }
-        string newS = new string(charArr);
-        return newS;
+        
+        return new string(arr);
     }
 }
