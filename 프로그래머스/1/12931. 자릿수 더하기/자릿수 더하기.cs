@@ -5,11 +5,11 @@ public class Solution
     public int solution(int n) 
     {
         string s = n.ToString();
-        int sum = 0;
+        int ans = 0;
         foreach(char c in s)
         {
-            sum += c - '0';
+            ans += c - '0';
         }
-        return sum;
+        return ans;
     }
 }
