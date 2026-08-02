@@ -6,20 +6,13 @@ public class Solution
 {
     public long solution(long n) 
     {
-        string strN = n.ToString();
+        string s = n.ToString();
+        List<char> c = new List<char>(s.ToList());
         
-        List<int> list = new List<int>();
-        foreach(char c in strN)
-        {
-            list.Add(c - '0');
-        }
-        var sortedNumbers = list.OrderByDescending(num => num).ToList();
+        List<char> ans = c.OrderByDescending(x => x).ToList();
         
-        string ans = "";
-        foreach(int i in sortedNumbers)
-        {
-            ans += i.ToString();
-        }
-        return long.Parse(ans);
+        string a = new string(ans.ToArray());
+        long result = long.Parse(a);
+        return result;
     }
 }
