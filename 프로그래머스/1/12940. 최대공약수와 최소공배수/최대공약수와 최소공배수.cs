@@ -1,21 +1,24 @@
+using System;
 public class Solution 
 {
-    public int[] solution(int n, int m)
+    public int[] solution(int n, int m) 
     {
-        int tmpN = n;
-        int tmpM = m;
-        
-        while (m != 0) 
+        int min = n > m ? m : n;
+        int max = n > m ? n : m;
+        int gcd = GCD(min, max);
+        int lcm = (n * m) / gcd;
+
+        return new int[] { gcd, lcm };
+
+        int GCD(int a, int b)
         {
-            int temp = m;
-            m = n % m;
-            n = temp;
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
         }
-        int gcd = n;        
-        int lcm = (tmpN * tmpM) / gcd ;
-        
-        int[] arr = new int[] { gcd, lcm};
-        
-        return arr;
     }
 }
