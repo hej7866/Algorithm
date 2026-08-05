@@ -1,15 +1,23 @@
+using System;
+
 public class Solution 
 {
     public bool solution(int x) 
     {
-        string strX = x.ToString();
+        string s = x.ToString();
+        char[] c = s.ToCharArray();
+        int[] ans = new int[c.Length];
         
-        int sum = 0;
-        foreach(char c in strX)
+        for(int i=0; i<c.Length; i++)
         {
-            sum += c - '0';
+            ans[i] = c[i]-'0';
         }
         
-        return (x%sum == 0) ? true : false;
+        int a = 0;
+        foreach(int i in ans)
+        {
+            a += i;
+        }
+        return x % a == 0;
     }
 }
