@@ -2,11 +2,11 @@ public class Solution
 {
     public double solution(int[] arr) 
     {
-        double answer = 0;
+        int ans = 0;
         foreach(int i in arr)
         {
-            answer += i;
+            ans += i;
         }
-        return answer/arr.Length;
+        return (double)ans / arr.Length;
     }
 }
