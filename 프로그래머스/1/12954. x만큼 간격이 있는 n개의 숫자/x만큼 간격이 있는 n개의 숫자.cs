@@ -1,12 +1,13 @@
-class Solution 
+public class Solution 
 {
     public long[] solution(int x, int n) 
     {
-        long[] answer = new long[n];
-        for(int i=0; i<n; i++)
+        long[] ans = new long[n];
+        ans[0] = x;
+        for(int i=1; i<n; i++)
         {
-            answer[i]=x*((long)i+1);
+            ans[i] = ans[i - 1] + x;
         }
-        return answer;
+        return ans;
     }
 }
