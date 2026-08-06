@@ -12,15 +12,15 @@ public class Example
         int a = Int32.Parse(s[0]);
         int b = Int32.Parse(s[1]);
 
-        string star = "";
+        string str = "";
         for(int i=0; i<a; i++)
         {
-            star += "*";
+            str += '*';
         }
         
-        for(int i=0; i<b; i++)
+        for(int j=0; j<b; j++)
         {
-            Console.WriteLine("{0}",star);
+            Console.WriteLine(str);
         }
     }
 }
