@@ -4,15 +4,11 @@ public class Solution
 {
     public string solution(string phone_number) 
     {
-        string str1 = "";
-        for(int i=0; i<phone_number.Length - 4; i++)
+        char[] p = phone_number.ToCharArray();
+        for(int i=0; i<p.Length-4; i++)
         {
-            str1 += "*";
+            p[i] = '*';
         }
-        
-        string str2 = phone_number.Substring(phone_number.Length - 4,4);
-        
-        Console.Write("{0} {1}", str1, str2);
-        return str1 + str2;
+        return new string(p);
     }
 }
