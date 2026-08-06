@@ -1,42 +1,37 @@
 using System;
-using System.Collections.Generic;
 
-class Solution
+public class Solution
 {
     public int solution(int[] nums)
     {
-        Func<int[], int, int, int, int> sumThreeElements = (arr, a, b, c) =>
-        {
-            return arr[a] + arr[b] + arr[c];
-        };
+        int answer = 0;
+        int n = nums.Length;
 
-        int count = 0;
-
-        // 모든 조합을 위한 중첩 반복문
-        for (int i = 0; i < nums.Length; i++)
+        for (int i = 0; i < n - 2; i++)
         {
-            for (int j = i + 1; j < nums.Length; j++)
+            for (int j = i + 1; j < n - 1; j++)
             {
-                for (int k = j + 1; k < nums.Length; k++)
+                for (int k = j + 1; k < n; k++)
                 {
-                    int sum = sumThreeElements(nums, i, j, k); // 람다 호출
-
-                    bool isBool = false;
-                    for (int m = 2; m < sum; m++)
+                    int sum = nums[i] + nums[j] + nums[k];
+                    if (IsPrime(sum))
                     {
-                        if (sum % m == 0)
-                        {
-                            isBool = true;
-                            break; // 더 이상 검사할 필요 없음
-                        }
-                    }
-                    if (!isBool && sum > 1) // 소수일 경우 카운트
-                    {
-                        count++;
+                        answer++;
                     }
                 }
             }
         }
-        return count;
+
+        return answer;
+    }
+
+    private bool IsPrime(int num)
+    {
+        if (num < 2) return false;
+        for (int i = 2; i * i <= num; i++)
+        {
+            if (num % i == 0) return false;
+        }
+        return true;
     }
 }
