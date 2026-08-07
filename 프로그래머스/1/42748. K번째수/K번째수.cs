@@ -5,21 +5,19 @@ public class Solution
 {
     public int[] solution(int[] array, int[,] commands) 
     {
-        List<int> ans = new List<int>();
+        List<int> temp = new List<int>();
+        int[] result = new int[commands.GetLength(0)];
         for(int i=0; i<commands.GetLength(0); i++)
         {
-            int s = commands[i,0] - 1;
-            int e = commands[i,1] - 1;
-            int k = commands[i,2] - 1;
-            
-            List<int> list = new List<int>();
-            for(int j=s; j<=e; j++)
+            for(int j=commands[i,0]; j<=commands[i,1]; j++)
             {
-                list.Add(array[j]);
+                temp.Add(array[j - 1]);
             }
-            list.Sort();
-            ans.Add(list[k]);
+            int[] tmp = temp.ToArray();
+            Array.Sort(tmp);
+            result[i] = tmp[commands[i,2] - 1];
+            temp.Clear();
         }
-        return ans.ToArray();
+        return result;
     }
 }
