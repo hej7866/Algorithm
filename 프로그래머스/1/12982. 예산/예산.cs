@@ -5,23 +5,17 @@ public class Solution
     public int solution(int[] d, int budget) 
     {
         Array.Sort(d);
-    
-        int idx = 0;
-        while(budget > 0)
+        int sum = 0;
+        int count = 0;
+        for(int i=0; i<d.Length; i++)
         {
-            budget -= d[idx];
-            idx++;
-            if(idx == d.Length)
+            sum += d[i];
+            if(sum > budget)
             {
-                break;
+                break;    
             }
+            count++;
         }
-
-        if(budget < 0)
-        {
-            idx--;
-        }
-
-        return idx;
+        return count;
     }
 }
