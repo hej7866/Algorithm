@@ -5,20 +5,24 @@ public class Solution
 {
     public int solution(int n) 
     {
-        List<int> list = new List<int>();
-        while(n > 0)
+        List<int> ans = new List<int>();
+        while(n / 3 != 0)
         {
-            list.Add(n%3);
+            ans.Add(n % 3);
             n /= 3;
         }
+        ans.Add(n % 3);
+      
+        ans.Reverse();
         
-        int ans = 0;
-        int t = 1;
-        for(int i = list.Count - 1; i >= 0; i--)
+        int result = 0;
+        int pow = 1;
+        for(int i=0; i<ans.Count; i++)
         {
-            ans += list[i] * t;
-            t *= 3;  
+            result += pow * ans[i];
+            pow *= 3;
         }
-        return ans;
+        
+        return result;
     }
 }
