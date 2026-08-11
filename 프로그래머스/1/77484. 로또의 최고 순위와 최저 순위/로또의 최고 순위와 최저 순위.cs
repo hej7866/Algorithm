@@ -1,47 +1,39 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
-public class Solution
+public class Solution 
 {
-    public int[] solution(int[] lottos, int[] win_nums) 
+    public int[] solution(int[] lottos, int[] win_nums)
     {
-    int high_count = 0;
-    int low_count = 0;
-        
-    foreach(int w in win_nums)
-    {
-        for(int i=0; i<lottos.Length; i++)
+        List<int> lottosList = new List<int>(lottos);
+        foreach(int num in win_nums)
         {
-            if(lottos[i] == w)
+            if(lottosList.Contains(num))
             {
-                high_count++;
-                low_count++;
+                lottosList.Remove(num);
             }
         }
+
+        int zeroCount = lottosList.Count(x => x == 0);
+        int matchCount = 6 - lottosList.Count; // 지워진 개수 = 맞은 개수
+
+        int[] result = new int[2];
+        result[0] = GetRank(matchCount + zeroCount); // 최고 순위 (0들이 다 맞았다고 가정)
+        result[1] = GetRank(matchCount);             // 최저 순위 (0들이 다 틀렸다고 가정)
+        return result;
     }
-    
-    foreach(int n in lottos)
+
+    private int GetRank(int count)
     {
-        if(n == 0)
+        switch(count)
         {
-            high_count++;
+            case 6: return 1;
+            case 5: return 2;
+            case 4: return 3;
+            case 3: return 4;
+            case 2: return 5;
+            default: return 6; // 0, 1개
         }
-    }
-    
-    Dictionary<int,int> dic = new Dictionary<int,int>()
-    {
-        {0, 6},
-        {1, 6},
-        {2, 5},
-        {3, 4},
-        {4, 3},
-        {5, 2},
-        {6, 1},
-        
-    };
-    int[] result = new int[2];
-    result[0] = dic[high_count];
-    result[1] = dic[low_count];
-    return result;
     }
 }
