@@ -1,57 +1,31 @@
 using System;
-using System.Text;
+using System.Linq;
 
 public class Solution 
 {
     public string solution(string X, string Y) 
     {
-        int[] countX = new int[10]; // X에 포함된 숫자의 카운트를 담을 배열
-        int[] countY = new int[10]; // Y에 포함된 카운트를 담을 배열
+        int[] countX = new int[10];
+        int[] countY = new int[10];
         
-        // 각 숫자 카운트 세는 작업
-        foreach (char c in X)
-        {
-            countX[c - '0']++;
-        }
+        foreach (char c in X) countX[c - '0']++;
+        foreach (char c in Y) countY[c - '0']++;
         
-        foreach (char c in Y)
-        {
-            countY[c - '0']++;
-        }
+        var result = new System.Text.StringBuilder();
         
-        int[] numArr = new int[10];
-        for(int i=0; i<=9; i++)
+        for (int digit = 9; digit >= 0; digit--)  // 큰 숫자부터 내림차순으로
         {
-            numArr[i] = Math.Min(countX[i], countY[i]);
-        }
-        
-        StringBuilder str = new StringBuilder(); // 이 문제의 핵심(시간 복잡도 해결)
-        for (int i = 9; i >= 0; i--)
-        {
-            for (int j = 0; j < numArr[i]; j++)
+            int common = Math.Min(countX[digit], countY[digit]);
+            for (int i = 0; i < common; i++)
             {
-                str.Append(i); // StringBuilder에 숫자 추가
+                result.Append(digit);
             }
         }
-        string result = str.ToString();
         
+        string str = result.ToString();
         
-        bool isOverOne = false;
-        for(int i=1; i<=9; i++)
-        {
-            if(numArr[i] > 0) { isOverOne = true; }
-        }
-        if(!isOverOne)
-        {
-            if(numArr[0] != 0)
-            {
-                result = "0";
-            }
-            else if(numArr[0] == 0)
-            {
-                result = "-1";
-            }
-        }
-        return result;
+        if (str == "") return "-1";
+        if (str[0] == '0') return "0";
+        return str;
     }
 }
