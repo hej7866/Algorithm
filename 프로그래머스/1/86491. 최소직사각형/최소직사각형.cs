@@ -1,49 +1,37 @@
 using System;
-using System.Linq;
 
 public class Solution 
 {
     public int solution(int[,] sizes) 
     {
-        int wMax = 0;
-        int hMax = 0;
+        int[] wallet = new int[2];
+        
+        // 가로가길고 세로가짧게 정렬
         for(int i=0; i<sizes.GetLength(0); i++)
         {
-            int w = sizes[i,0];
-            int h = sizes[i,1];
-            
-            if(wMax < w)
+            if(sizes[i,0] < sizes[i,1])
             {
-                wMax = w;
-            }
-            if(hMax < h)
-            {
-                hMax = h;
-            }
+                int tmp = sizes[i,0];
+                sizes[i,0] = sizes[i,1];
+                sizes[i,1] = tmp;
+            } 
         }
-        
-        int max = (wMax > hMax) ? wMax : hMax;
-        
-        int[] ans = new int[2];
-        ans[0] = max;
+        wallet[0] = sizes[0,0];
+        wallet[1] = sizes[0,1];
         
         for(int i=0; i<sizes.GetLength(0); i++)
         {
-            int w = sizes[i,0];
-            int h = sizes[i,1];
+            if(wallet[0] < sizes[i,0])
+            {
+                wallet[0] = sizes[i,0];
+            }
             
-            int tmp = (w > h) ? h : w;
-            if(ans[1] < tmp)
-            {             
-                ans[1] = tmp;
+            if(wallet[1] < sizes[i,1])
+            {
+                wallet[1] = sizes[i,1];
             }
         }
-        int area = 1;
-        foreach(int num in ans)
-        {
-            area *= num;
-        }
-        
-        return area;
+        Console.WriteLine($"{wallet[0]}, {wallet[1]}");
+        return wallet[0] * wallet[1];
     }
 }
