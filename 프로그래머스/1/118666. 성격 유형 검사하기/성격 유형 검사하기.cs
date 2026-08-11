@@ -5,39 +5,63 @@ public class Solution
 {
     public string solution(string[] survey, int[] choices) 
     {
-        char[,] mbtiArr = new char[4,2]
+        // R T , C F, J M, A N
+        Dictionary<char, int> pointDic = new Dictionary<char, int>()
         {
-            {'R', 'T'},
-            {'C', 'F'},
-            {'J', 'M'},
-            {'A', 'N'},
+            {'R', 0}, {'T', 0}, 
+            {'C', 0}, {'F', 0},
+            {'J', 0}, {'M', 0}, 
+            {'A', 0}, {'N', 0}
         };
         
-        Dictionary<char, int> score = new Dictionary<char, int>();
-        for(int i = 0; i < mbtiArr.GetLength(0); i++)
-        {
-            score[mbtiArr[i, 0]] = 0;
-            score[mbtiArr[i, 1]] = 0;
-        }
-        
-        for(int i = 0; i < survey.Length; i++)
+        for(int i=0; i<survey.Length; i++)
         {
             if(choices[i] < 4)
             {
-                score[survey[i][0]] += (4 - choices[i]);
-            } 
-            else
-            {
-                score[survey[i][1]] += (choices[i] - 4); 
+                pointDic[survey[i][0]] += 4 - choices[i];
             }
+            else if(choices[i] > 4)
+            {
+                pointDic[survey[i][1]] += choices[i] - 4;
+            }
+        } 
+        
+        string result = "";
+        if(pointDic['R'] >= pointDic['T'])
+        {
+            result += 'R';
+        }
+        else
+        {
+            result += 'T';
         }
         
-        string ans = "";
-        for(int i = 0; i < 4; i++)
+        if(pointDic['C'] >= pointDic['F'])
         {
-            if(score[mbtiArr[i,0]] >= score[mbtiArr[i,1]]) { ans += mbtiArr[i,0]; }
-            else { ans += mbtiArr[i,1]; }
+            result += 'C';
         }
-        return ans;
+        else
+        {
+            result += 'F';
+        }
+        
+        if(pointDic['J'] >= pointDic['M'])
+        {
+            result += 'J';
+        }
+        else
+        {
+            result += 'M';
+        }
+        
+        if(pointDic['A'] >= pointDic['N'])
+        {
+            result += 'A';
+        }
+        else
+        {
+            result += 'N';
+        }
+        return result;
     }
 }
