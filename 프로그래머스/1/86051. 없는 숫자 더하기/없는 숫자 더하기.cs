@@ -2,24 +2,16 @@ using System;
 
 public class Solution 
 {
-    public int solution(int[] numbers) 
+    public int solution(int[] numbers)
     {
-        int ans = 0;
+        int result = 0;
         for(int i=0; i<=9; i++)
-        {
-            bool isBool = false;
-            foreach(int num in numbers)
+        {    
+            if(!numbers.Contains(i))
             {
-                if(i == num)
-                {
-                    isBool = true;
-                }
-            }
-            if(!isBool)
-            {
-                ans += i;
+                result += i;
             }
         }
-        return ans;
+        return result;
     }
 }
