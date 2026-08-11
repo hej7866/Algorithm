@@ -4,12 +4,11 @@ public class Solution
 {
     public int solution(int[] a, int[] b) 
     {
-        int n = a.Length;
-        int ans = 0;
-        for(int i=0; i<n; i++)
+        int result = 0;
+        for(int i=0; i<a.Length; i++)
         {
-            ans += a[i] * b[i];
+            result += a[i] * b[i];
         }
-        return ans;
+        return result;
     }
 }
