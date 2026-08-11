@@ -4,20 +4,12 @@ class Solution
 {
     public long solution(int price, int money, int count)
     {
-        long sum = 0;
+        long p = price;
+        long m = money;
         for(int i=1; i<=count; i++)
         {
-            sum += price * i;
+            m -= p * i;
         }
-        long ans = 0;
-        if(sum > money)
-        {
-            ans = sum - money;
-        }
-        else
-        {
-            ans = 0;
-        }
-        return ans;
+        return m > 0 ? 0 : m * (-1);
     }
 }
