@@ -1,54 +1,53 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
-public class Solution
+public class Solution 
 {
     public int[] solution(string[] id_list, string[] report, int k) 
     {
-        // 1단계: HashSet을 사용하여 고유한 보고서를 저장
-        HashSet<string> uniqueReports = new HashSet<string>(report);
+        // key = 각 유저, value = 각 유저가 신고당한 횟수
+        Dictionary<string, int> reportCountDic = new Dictionary<string, int>(); 
         
-        // 2단계: 보고 수와 결과를 추적할 딕셔너리 생성
-        Dictionary<string, int> reportCounts = new Dictionary<string, int>();
-        Dictionary<string, int> result = new Dictionary<string, int>();
-
-        // 결과 딕셔너리 초기화
-        foreach (string id in id_list)
+        // key = 각 유저, value = 각 유저가 신고한 id리스트
+        Dictionary<string, List<string>> reportDic = new Dictionary<string, List<string>>();
+        
+        List<string> reportList = report.ToList();
+        HashSet<string> reportHashSet = new HashSet<string>();
+        
+        foreach(string s in reportList)
         {
-            reportCounts[id] = 0; // 각 사용자의 보고 수
-            result[id] = 0; // 각 사용자의 알림 수
+            reportHashSet.Add(s);
         }
-
-        // 3단계: 각 사용자에 대한 보고 수 카운트
-        foreach (string r in uniqueReports)
+        
+        foreach(string id in id_list)
         {
-            string[] rep = r.Split(' ');
-            string reporter = rep[0];
-            string reported = rep[1];
-
-            reportCounts[reported]++;
+            reportCountDic[id] = 0;
+            reportDic[id] = new List<string>();
         }
-
-        // 4단계: k 이상 보고된 사용자의 알림 수 카운트
-        foreach (string r in uniqueReports)
+        
+        foreach(string r in reportHashSet)
         {
-            string[] rep = r.Split(' ');
-            string reporter = rep[0];
-            string reported = rep[1];
-
-            if (reportCounts[reported] >= k)
-            {
-                result[reporter]++;
+            string[] words = r.Split(' ');
+            reportCountDic[words[1]]++; // words[1]이 신고당했으므로 카운트 추가;
+            reportDic[words[0]].Add(words[1]);
+        }
+        
+        int[] result = new int[id_list.Length];
+        int idx = 0;
+        foreach(var r in reportDic)
+        {
+            foreach(string s in r.Value)
+            { 
+                if(reportCountDic[s] >= k)
+                {
+                    result[idx]++;
+                }
             }
+            idx++;
         }
-
-        // 5단계: 최종 결과 배열 준비
-        int[] ans = new int[id_list.Length];
-        for (int i = 0; i < id_list.Length; i++)
-        {
-            ans[i] = result[id_list[i]];
-        }
-
-        return ans;
+    
+        return result;
+        
     }
 }
