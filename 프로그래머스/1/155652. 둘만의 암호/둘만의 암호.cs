@@ -1,30 +1,25 @@
 using System;
-using System.Collections.Generic;
 
 public class Solution 
 {
     public string solution(string s, string skip, int index) 
     {
         string result = "";
-        List<char> alphabetList = new List<char>();
-        for(int i=0; i<s.Length; i++)
-        {   
-            int c = 1;
-            char ch = s[i];
-            char a = (char)((int)ch + c);
-            while(alphabetList.Count < index)
+        foreach(char c in s)
+        {
+            int count = 0;
+            char tmp = c;
+            while(count < index)
             {
-                if(a > 'z') { a = 'a'; }
-                while(skip.Contains(a))
+                int newIndex = (tmp - 'a' + 1) % 26;
+                tmp = (char)('a' + newIndex);   // 먼저 이동
+                
+                if(!skip.Contains(tmp))          // 이동한 후 도착한 곳이 skip이 아니면
                 {
-                    a++;
-                    if(a > 'z') { a = 'a'; }
+                    count++;                      // 그때 카운트
                 }
-                alphabetList.Add(a);
-                a++;
             }
-            result += alphabetList[alphabetList.Count - 1];
-            alphabetList.Clear();
+            result += tmp;
         }
         return result;
     }
