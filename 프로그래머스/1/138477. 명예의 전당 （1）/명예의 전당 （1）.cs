@@ -1,36 +1,30 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 
 public class Solution 
 {
     public int[] solution(int k, int[] score) 
     {
-        int day = score.Length;
-        List<int> result = new List<int>();
         List<int> list = new List<int>();
-        for(int i=0; i<day; i++)
+        int[] result = new int[score.Length];
+        
+        for(int i=0; i<score.Length; i++)
         {
             if(list.Count < k)
             {
                 list.Add(score[i]);
-                list.Sort();
-                result.Add(list[0]);
-                continue;
             }
-            
-            int min = list.Min();
-            if(list.Count == k)
+            else if(list.Count == k)
             {
-                if(score[i] > min)
+                if(list[0] < score[i])
                 {
-                    list.Remove(min);
-                    list.Add(score[i]);
-                    list.Sort();
+                    list[0] = score[i];
                 }
             }
-            result.Add(list[0]);
+            list = list.OrderBy(x => x).ToList();
+            result[i] = list[0];
         }
-        return result.ToArray();
+        return result;
     }
 }
