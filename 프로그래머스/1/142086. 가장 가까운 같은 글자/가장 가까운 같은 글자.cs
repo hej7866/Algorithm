@@ -1,25 +1,28 @@
 using System;
-using System.Collections.Generic;
 
 public class Solution 
 {
     public int[] solution(string s) 
     {
-        int[] indexArr = new int[s.Length];
-        
+        int[] result = new int[s.Length];
         for(int i=0; i<s.Length; i++)
         {
-            int currIdx = i;
-            for(int j=0; j<currIdx; j++)
+            char c = s[i];
+            bool isMatch = false;
+            for(int j=i-1; j>=0; j--)
             {
-                if(s[j] == s[i]) { indexArr[i] = i-j; }
+                if(c == s[j])
+                {
+                    result[i] = i - j;
+                    isMatch = true;
+                    break;
+                }
+            }
+            if(!isMatch)
+            {
+                result[i] = -1;
             }
         }
-        
-        for(int i=0; i<indexArr.Length; i++)
-        {
-            if(indexArr[i] == 0) { indexArr[i] = -1; }
-        }
-        return indexArr;
+        return result;
     }
 }
