@@ -1,40 +1,28 @@
 using System;
-using System.Collections.Generic;
 
 public class Solution 
 {
     public string solution(string[] cards1, string[] cards2, string[] goal) 
     {
-        Dictionary<string, int> cardsDic1 = new Dictionary<string, int>();
-        Dictionary<string, int> cardsDic2 = new Dictionary<string, int>();
+        int i = 0;  // cards1의 다음에 뽑을 위치
+        int j = 0;  // cards2의 다음에 뽑을 위치
         
-        for(int i=0; i<cards1.Length; i++) { cardsDic1[cards1[i]] = i; }
-        for(int i=0; i<cards2.Length; i++) { cardsDic2[cards2[i]] = i; }
-        
-        List<int> indexC1 = new List<int>();
-        List<int> indexC2 = new List<int>();
-        foreach(string g in goal)
+        foreach (string word in goal)
         {
-            if(cardsDic1.ContainsKey(g))
+            if (i < cards1.Length && cards1[i] == word)
             {
-                indexC1.Add(cardsDic1[g]);
+                i++;
             }
-            else if(cardsDic2.ContainsKey(g))
+            else if (j < cards2.Length && cards2[j] == word)
             {
-                indexC2.Add(cardsDic2[g]);
+                j++;
+            }
+            else
+            {
+                return "No";  // 어느 쪽 맨 앞과도 안 맞으면 완성 불가능
             }
         }
         
-        bool isBool = false;
-        for(int i=0; i<indexC1.Count; i++)
-        {
-            if(indexC1[i] != i) { isBool = true; }
-        }
-        
-        for(int i=0; i<indexC2.Count; i++)
-        {
-            if(indexC2[i] != i) { isBool = true; }
-        }
-        return isBool ? "No" : "Yes";
+        return "Yes";
     }
 }
