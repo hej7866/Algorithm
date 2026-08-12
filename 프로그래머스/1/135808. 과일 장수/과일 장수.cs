@@ -1,39 +1,31 @@
 using System;
+using System.Collections.Generic;
 
 public class Solution 
 {
-    public int solution(int k, int m, int[] score)
+    public int solution(int k, int m, int[] score) 
     {
         Array.Sort(score);
-        Array.Reverse(score);   
-
-        int box = score.Length / m;
         int count = 0;
-        int result = 0;
-        if(box == 0)
+        List<List<int>> boxList = new List<List<int>>();
+        List<int> tmpList = new List<int>();
+        for(int i=score.Length - 1; i>=0; i--)
         {
-            return 0;
-        }
-        if(box != 0)
-        {      
-            while(true)
+            tmpList.Add(score[i]);
+            count++;
+            if(count == m)
             {
-                int[] boxArr = new int[m];
-
-                for(int i=0; i<m; i++)
-                {
-                    boxArr[i] = score[m*count + i];
-                }
-
-                result += boxArr[m-1] * m;
-                count++;
-                box--;
-                if(box == 0)
-                {
-                    break;
-                }
+                boxList.Add(tmpList);
+                tmpList = new List<int>();
+                count = 0;
             }
         }
-        return result;
+        
+        int s = 0;
+        foreach(List<int> list in boxList)
+        {
+            s += list[list.Count - 1] * m;
+        }
+        return s;
     }
 }
