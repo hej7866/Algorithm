@@ -5,51 +5,42 @@ public class Solution
 {
     public int solution(string s) 
     {
-        List<string> strList = new List<string>();
+        string tmp = "";
+        List<string> tmpList = new List<string>();
+        int c1 = 0;
+        int c2 = 0;
         
-        int idx = 0;
-        while(true)
+        char x = s[0]; // 처음 문자 세팅
+        bool isMatch = false;
+        for(int i=0; i<s.Length; i++)
         {
-            char ch = s[idx];
             
-            bool isBool = false;
-            int eNum = 0;
-            int dNum = 0;
-            string tmp = "";
-            for(int i = idx; i<s.Length; i++)
+            if(isMatch)
             {
-                if(ch == s[i]) { eNum++; }
-                else if(ch != s[i]) { dNum++; }
-                
-                tmp += s[i];
-                
-                if(eNum == dNum)
-                {
-                    strList.Add(tmp);
-                    tmp = "";
-                    if(i+1<s.Length){ idx = i+1; }
-                    else if(i+1 == s.Length) { break; }
-                    isBool = true;
-                    break;
-                }
+                x = s[i];
+                isMatch = false;
             }
             
-            if(!isBool)
+            if(x == s[i])
             {
-                strList.Add(tmp);
-                break;
+                c1++;
             }
-            
+            else
+            {
+                c2++;
+            }
+            tmp += s[i];
+            if(c1 == c2)
+            {
+                tmpList.Add(tmp);
+                tmp = "";
+                isMatch = true;
+            }
         }
-        
-        if(strList[strList.Count - 1] == "")
+        if(tmp.Length != 0)
         {
-            strList.RemoveAt(strList.Count - 1);
+            tmpList.Add(tmp);
         }
-        foreach(string str in strList)
-        {
-            Console.WriteLine(str);
-        }
-        return strList.Count;
+        return tmpList.Count;
     }
 }
