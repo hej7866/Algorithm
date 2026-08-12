@@ -5,102 +5,43 @@ public class Solution
 {
     public int[] solution(string today, string[] terms, string[] privacies) 
     {
-        // 오늘 날짜를 배열로 바꾸는 과정 
-        string[] tArr = today.Split(".");
-        int[] t_arr = new int[tArr.Length];
-        for(int i=0; i<tArr.Length; i++)
+        // 약관을 딕셔너리에 넣는과정 dic[A] = 6 이런느낌
+        Dictionary<string, int> dic = new Dictionary<string, int>();
+        foreach(string term in terms) 
         {
-            t_arr[i] = Int32.Parse(tArr[i]);
+            string[] str = term.Split(' ');
+            dic[str[0]] = Int32.Parse(str[1]);
         }
         
-        // terms를 Dictionary로 바꾸는 과정
-        Dictionary<string, int> termsDic = new Dictionary<string, int>();
+        // 오늘 날짜 밸류 계산
+        int todayValue = 0;
+        string[] todayStrs = today.Split('.');
+   
+        todayValue = 
+            (Int32.Parse(todayStrs[0]) * 28 * 12) + 
+            ((Int32.Parse(todayStrs[1]) - 1) * 28) + 
+            (Int32.Parse(todayStrs[2]));
+        Console.WriteLine(todayValue);
         
-        for (int i = 0; i < terms.Length; i++)
-        {
-            string[] termParts = terms[i].Split(' '); // 각 요소를 분리
-            if (termParts.Length == 2) // 분리된 부분이 두 개인지 확인
-            {
-                string key = termParts[0]; // 첫 번째 부분은 키
-                termsDic[key] = Int32.Parse(termParts[1]);
-            }
-        }
-        
-        int num = 1;
+        // privacies에 계약 종료날짜를 더한 밸류값 계산
+        int[] valueArr = new int[privacies.Length];
         List<int> result = new List<int>();
-        foreach(string p in privacies)
+        for(int i=0; i<privacies.Length; i++)
         {
-            string[] pArr = p.Split(' '); // privacies를 공백을 기준으로 분리 [개인정보 수집 일자, 약관 종류]
+            string[] str = privacies[i].Split(' ');
+            string[] day = str[0].Split('.');
             
-            string t = pArr[1]; // 약관 종류 할당
-            int a = termsDic[t]; // 약관 종류에 대응하는 유효기간
-            
-            string[] pvcArr = pArr[0].Split("."); // 개인정보 수집일자를 .을 기준으로 분리
-            int[] pvc_arr = new int[pvcArr.Length]; 
-            for(int i=0; i<pvcArr.Length; i++)
+            valueArr[i] = 
+                (Int32.Parse(day[0]) * 28 * 12) + 
+                ((Int32.Parse(day[1]) - 1) * 28) + 
+                (Int32.Parse(day[2])) +
+                ((dic[str[1]]) * 28);
+            if(todayValue >= valueArr[i])
             {
-                pvc_arr[i] = Int32.Parse(pvcArr[i]); // 분리한 날짜를 정수형으로 바꾸는 과정
+                result.Add(i + 1);
             }
-            
-            
-            // 기존 개인정보 수집 일자에 먼저 -1일을 해주는 과정 
-            pvc_arr[2] -= 1;
-            if( pvc_arr[2] == 0)
-            {
-                pvc_arr[2] = 28;
-                pvc_arr[1] -= 1;
-            }
-            else if(pvc_arr[1] == 0)
-            {
-                pvc_arr[1] = 12;
-                pvc_arr[0] -= 1;
-            }
-            
-            
-            int tmp = pvc_arr[1] + a;
-            if(tmp > 12)
-            {
-                pvc_arr[0] += tmp/12;
-                pvc_arr[1] = tmp%12;
-                if(pvc_arr[1] == 0)
-                {
-                    pvc_arr[1] = 12;
-                    pvc_arr[0] -= 1;
-                }
-            }
-            else if(tmp <= 12)
-            {
-                pvc_arr[1] = tmp;
-            }
-            
-            if(pvc_arr[0] < t_arr[0])
-            {
-                result.Add(num);
-                num++;
-                continue;
-            }
-            else if(pvc_arr[0] == t_arr[0] && pvc_arr[1] < t_arr[1])
-            {
-                result.Add(num);
-                num++;
-                continue;
-            }
-            else if(pvc_arr[0] == t_arr[0] && pvc_arr[1] == t_arr[1] &&  pvc_arr[2] < t_arr[2])
-            {
-                result.Add(num);
-                num++;
-                continue;
-            }
-            else
-            {
-                num++;
-            }
-            foreach(int i in pvc_arr)
-            {
-                Console.WriteLine(i);
-            }
-            
-        }        
+        }
+        
         return result.ToArray();
     }
 }
