@@ -1,40 +1,45 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 public class Solution 
 {
     public int[] solution(string[] wallpaper) 
     {
-        int n = wallpaper.Length;
-        int m = wallpaper[0].Length;
+        int minX = wallpaper[0].Length;
+        int minY = wallpaper.Length;
+        int maxX = 0;
+        int maxY = 0;
         
-        int[] upPos = new int[2];// 가장 위에있는 놈
-        int[] leftPos = new int[2];// 가장 왼쪽에있는 놈
-        int[] rightPos = new int[2];// 가장 오른쪽에 있는 놈
-        int[] downPos = new int[2];// 가장 아래에 있는 놈
-        
-        List<(int,int)> sharpPosList = new List<(int,int)>();
-        for(int i=0; i<n; i++)
+        for(int i=0; i<wallpaper.Length; i++)
         {
-            for(int j=0; j<m; j++)
+            string str = wallpaper[i];
+            for(int j=0; j<str.Length; j++)
             {
-                if(wallpaper[i][j] == '#')
+                if(str[j] == '#')
                 {
-                    sharpPosList.Add((i,j));
+                    if(minX > j)
+                    {
+                        minX = j;
+                    }
+                    if(minY > i)
+                    {
+                        minY = i;
+                    }
+                    if(maxX < j)
+                    {
+                        maxX = j;
+                    }
+                    if(maxY < i)
+                    {
+                        maxY = i;
+                    }
                 }
             }
         }
         
-  
-        int minRow = sharpPosList.Min(x => x.Item1);
-        int minCol = sharpPosList.Min(x => x.Item2);
-
-        int maxRow = sharpPosList.Max(x => x.Item1);
-        int maxCol = sharpPosList.Max(x => x.Item2);
-
-        
-        
-        return new int[] {minRow,minCol,maxRow + 1,maxCol + 1};
+        int[] result = new int[]
+        {
+            minY, minX, maxY + 1, maxX + 1
+        };
+        return result;
     }
 }
