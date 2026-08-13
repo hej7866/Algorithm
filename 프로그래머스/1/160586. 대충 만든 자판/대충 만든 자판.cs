@@ -1,49 +1,43 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public class Solution 
 {
     public int[] solution(string[] keymap, string[] targets) 
-    {   
-        Dictionary<char, int> touchMap = new Dictionary<char, int>();
-                   
-        for(int i=0; i<keymap.Length; i++)
+    {
+        Dictionary<char, int> minPress = new Dictionary<char, int>();
+        
+        foreach(string key in keymap)
         {
-            for(int j=0; j<keymap[i].Length; j++)
+            for (int i = 0; i < key.Length; i++)
             {
-                char c = keymap[i][j];
-                if (touchMap.ContainsKey(c))
+                char c = key[i];
+                int press = i + 1;  // i번째 위치니까 (i+1)번 눌러야 함
+                
+                if (!minPress.ContainsKey(c) || minPress[c] > press)
                 {
-                    touchMap[c] = Math.Min(touchMap[c], j + 1); // 최소 터치 수 갱신
-                }
-                else
-                {
-                    touchMap[c] = j + 1; // 첫 등장 시 터치 수 저장
+                    minPress[c] = press;  // 더 적은 횟수로 갱신
                 }
             }
         }
         
-        int[] result = new int[targets.Length]; // 결과를 담을 배열의 길이는 targets의 길이와 같다.
+        int[] result = new int[targets.Length];
         
-        for (int i = 0; i < targets.Length; i++)
+        for(int i=0; i<targets.Length; i++)
         {
-            int sum = 0;
-            foreach (char c in targets[i])
+            int total = 0;
+            bool possible = true;
+            foreach(char c in targets[i])
             {
-                if (touchMap.TryGetValue(c, out int touchCount)) 
+                if(!minPress.ContainsKey(c))
                 {
-                    sum += touchCount;
-                }
-                else
-                {
-                    sum = -1; // 문자가 키맵에 없으면 -1
+                    possible = false;
                     break;
                 }
+                total += minPress[c];
             }
-            result[i] = sum;
+            result[i] = possible ? total : -1;
         }
-        
         return result;
     }
 }
