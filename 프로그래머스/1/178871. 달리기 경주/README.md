@@ -1,10 +1,10 @@
 # [level 1] 달리기 경주 - 178871 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/178871?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/178871) 
 
 ### 성능 요약
 
-메모리: 188 MB, 시간: 254.46 ms
+메모리: 191 MB, 시간: 159.26 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 05월 11일 01:07:24
+2026년 08월 14일 03:02:47
 
 ### 문제 설명
 
