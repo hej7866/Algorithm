@@ -1,10 +1,10 @@
 # [level 2] 멀리 뛰기 - 12914 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12914?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12914) 
 
 ### 성능 요약
 
-메모리: 46.1 MB, 시간: 0.13 ms
+메모리: 46.6 MB, 시간: 0.15 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 07월 22일 20:31:07
+2026년 08월 17일 03:46:37
 
 ### 문제 설명
 

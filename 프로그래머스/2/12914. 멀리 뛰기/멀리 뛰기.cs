@@ -1,26 +1,22 @@
-public class Solution
+using System;
+
+public class Solution 
 {
-    public long solution(int n)
+    public long solution(int n) 
     {
-        const int MOD = 1234567;
-
-        if (n == 1)
-            return 1;
-
-        if (n == 2)
-            return 2;
-
-        long prev2 = 1; // dp[1]
-        long prev1 = 2; // dp[2]
-
-        for (int i = 3; i <= n; i++)
+        int MOD = 1234567;
+        int[] arr = new int[2001];
+        arr[0] = 1;
+        arr[1] = 1;
+        
+        for(int i=2; i<=2000; i++)
         {
-            long current = (prev1 + prev2) % MOD;
-
-            prev2 = prev1;
-            prev1 = current;
+            arr[i] = (arr[i-1] + arr[i-2]) % MOD;
         }
-
-        return prev1;
+        
+        return arr[n];
     }
+    
+    
+   
 }
