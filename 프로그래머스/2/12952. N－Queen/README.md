@@ -1,10 +1,10 @@
 # [level 2] N-Queen - 12952 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12952) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12952?language=csharp) 
 
 ### 성능 요약
 
-메모리: 4.14 MB, 시간: 6.04 ms
+메모리: 46.3 MB, 시간: 234.76 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 12월 02일 19:08:22
+2026년 08월 21일 00:59:58
 
 ### 문제 설명
 
